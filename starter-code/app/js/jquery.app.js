@@ -34,7 +34,7 @@ var newCat={//creating new object
 
 $.ajax({
         type: "POST",
-        url: "https://ga-cat-rescue.herokuapp.com/api/cats/",
+        url: "https://ga-cat-rescue.herokuapp.com/api/cats",
         data: JSON.stringify
 
     });

@@ -20,25 +20,33 @@
 				}
 			}
 		
-	
+	write_catList();
 
-write_catList();
+$( "#new-cat" ).submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});	
+
+var newCat={//creating new object
+ name: $('#cat-name').val(),
+ note: $('#cat-note').val(),
+};
+
+$.ajax({
+        type: "POST",
+        url: "https://ga-cat-rescue.herokuapp.com/api/cats/",
+        data: JSON.stringify
+
+    });
 
 
+
+
+
+
+
+
+
+
+  
 });
-
-
-
-$("form").submit(function(event) {
-    	var cat = {"name":"cat-name","note":"cat-note"};
-   		$.ajax({
-	        type: "POST",
-	        data :JSON.stringify(cat),
-	        url: "https://ga-cat-rescue.herokuapp.com/api/cats",
-	        contentType: "application/json"
-    	});
-    }
-    
-    );
-	
- 
